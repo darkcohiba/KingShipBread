@@ -6,4 +6,13 @@ Rails.application.routes.draw do
 
   get '/hello', to: 'application#hello_world'
 
+# user routes
+  get '/users', to: 'user#index'
+  get '/users/:id', to: 'user#show'
+  patch '/users/:id', to: 'user#update'
+  post '/users', to: 'user#create'
+  delete '/users/:id', to: 'user#destroy'
+
+
+
 end
