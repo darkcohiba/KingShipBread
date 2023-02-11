@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_10_174334) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_11_042933) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,13 +22,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_10_174334) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.bigint "breads_id", null: false
-    t.bigint "users_id", null: false
+    t.bigint "bread_id", null: false
+    t.bigint "user_id", null: false
     t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["breads_id"], name: "index_orders_on_breads_id"
-    t.index ["users_id"], name: "index_orders_on_users_id"
+    t.index ["bread_id"], name: "index_orders_on_bread_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,6 +41,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_10_174334) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "orders", "breads", column: "breads_id"
-  add_foreign_key "orders", "users", column: "users_id"
+  add_foreign_key "orders", "breads"
+  add_foreign_key "orders", "users"
 end
