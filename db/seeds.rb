@@ -8,23 +8,145 @@
 
 require 'faker'
 
-# puts Faker::Name.name
 puts 'creating users'
-User.create([{
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name ,
-    username: "jSmith",
-    email: "jsmith@example.com",
-    password_digest: "123"
-},
-{
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    username: "sSmith",
-    email: "ssmith@example.com",
-    password_digest: "123"
-}
+
+User.create([
+    {
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name ,
+        username: "starter",
+        email: "jsmith@example.com",
+        password: "123",
+        admin: true
+    },
+    {
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        username: "closer",
+        email: "ssmith@example.com",
+        password: "123",
+        admin: false
+    },
+    {
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        username: Faker::Internet.username,
+        email: "ssmith@example.com",
+        password: "123",
+        admin: false
+    },
+    {
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        username: Faker::Internet.username,
+        email: "ssmith@example.com",
+        password: "123",
+        admin: false
+    },
+    {
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        username: Faker::Internet.username,
+        email: "ssmith@example.com",
+        password: "123",
+        admin: false
+    },
+    {
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        username: Faker::Internet.username,
+        email: "ssmith@example.com",
+        password: "123",
+        admin: false
+    },
+    {
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        username: Faker::Internet.username,
+        email: "ssmith@example.com",
+        password: "123",
+        admin: false
+    },
+    {
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        username: Faker::Internet.username,
+        email: "ssmith@example.com",
+        password: "123",
+        admin: false
+    }
+])
+puts 'finished creating users'
+puts 'seeding bread'
+Bread.create([
+    {
+        title: "Country Loaf",
+        description: "Classic sourdough loaf",
+        price: 10
+    },
+    {
+        title: "Herb Loaf",
+        description: "Classic sourdough loaf with sage, rosemary and thyme. Brushed with herb olive oil.",
+        price: 10
+    },
+    {
+        title: "Olive Fougasse",
+        description: "Baguette dough mixed with olives and shaped into a fougasse.",
+        price: 6
+    },
+    {
+        title: "Bagel",
+        description: "Plain bagel, one per order",
+        price: 2
+    },
+])
+puts 'finished creating breads'
+
+puts 'seeding orders'
+
+Order.create([
+    {
+        bread_id: Bread.ids.sample,
+        user_id: User.ids.sample,
+        quantity: rand(1..5),
+        completed: Faker::Boolean.boolean(true_ratio: 0.1)
+    },
+    {
+        bread_id: Bread.ids.sample,
+        user_id: User.ids.sample,
+        quantity: rand(1..5),
+        completed: Faker::Boolean.boolean(true_ratio: 0.1)
+    },
+    {
+        bread_id: Bread.ids.sample,
+        user_id: User.ids.sample,
+        quantity: rand(1..5),
+        completed: Faker::Boolean.boolean(true_ratio: 0.1)
+    },
+    {
+        bread_id: Bread.ids.sample,
+        user_id: User.ids.sample,
+        quantity: rand(1..5),
+        completed: Faker::Boolean.boolean(true_ratio: 0.1)
+    },
+    {
+        bread_id: Bread.ids.sample,
+        user_id: User.ids.sample,
+        quantity: rand(1..5),
+        completed: Faker::Boolean.boolean(true_ratio: 0.1)
+    },
+    {
+        bread_id: Bread.ids.sample,
+        user_id: User.ids.sample,
+        quantity: rand(1..5),
+        completed: Faker::Boolean.boolean(true_ratio: 0.1)
+    },
+    {
+        bread_id: Bread.ids.sample,
+        user_id: User.ids.sample,
+        quantity: rand(1..5),
+        completed: Faker::Boolean.boolean(true_ratio: 0.1)
+    }
 ])
 
-
-puts 'finished creating users'
+puts 'finished seeding orders!'

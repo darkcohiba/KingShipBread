@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  get '/hello', to: 'application#hello_world'
+  # get '/hello', to: 'application#hello_world'
 
 # user routes
   # get '/users', to: 'user#index'
@@ -17,6 +17,11 @@ Rails.application.routes.draw do
   # post '/users', to: 'user#create'
   # delete '/users/:id', to: 'user#destroy'
 
+
+  # authenication routes
+  post '/login', to: 'sessions#login'
+  delete '/logout', to: 'sessions#logout'
+  get "/me", to: "users#showme"
 
 
 end

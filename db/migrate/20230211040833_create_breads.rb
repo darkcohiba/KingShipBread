@@ -3,6 +3,7 @@ class CreateBreads < ActiveRecord::Migration[7.0]
     create_table :breads do |t|
       t.string :title
       t.string :description
+      t.integer :price
 
       t.timestamps
     end

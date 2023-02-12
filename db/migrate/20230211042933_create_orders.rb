@@ -4,6 +4,7 @@ class CreateOrders < ActiveRecord::Migration[7.0]
       t.belongs_to :bread, null: false, foreign_key: true
       t.belongs_to :user, null: false, foreign_key: true
       t.integer :quantity
+      t.boolean :completed
 
       t.timestamps
     end

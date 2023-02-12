@@ -17,6 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_11_042933) do
   create_table "breads", force: :cascade do |t|
     t.string "title"
     t.string "description"
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -25,6 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_11_042933) do
     t.bigint "bread_id", null: false
     t.bigint "user_id", null: false
     t.integer "quantity"
+    t.boolean "completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bread_id"], name: "index_orders_on_bread_id"
@@ -37,6 +39,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_11_042933) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
+    t.boolean "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
