@@ -11,7 +11,10 @@ function Homepage() {
     }, []);
     return (
         <div className="w-screen h-screen">
-            Homepage
+            <p>Already a Bread Club Member?</p>
+            <button>Click here to Login</button>
+            <p>Looking to join the best club around?</p>
+            <button>Click here to Signup</button>
         </div>
     );
 }

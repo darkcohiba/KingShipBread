@@ -5,7 +5,7 @@ function Navbar({user}) {
     return (
         <div className="navbar bg-base-100">
         <div className="flex-1">
-            <a  className="btn btn-ghost normal-case text-xl">Kingship Bread</a>
+            <a  className="btn btn-ghost normal-case text-xl">Brave Bear Bakery</a>
         </div>
         <div className="flex-none">
             {/* <div className="dropdown dropdown-end">
@@ -48,3 +48,16 @@ function Navbar({user}) {
 }
 
 export default Navbar;
+
+
+function renderExhibits(exhibits){
+    renderComments(exhibits.comments)
+}
+
+function renderComments(comments){
+    //run a foreach on comments and pass each individual comment into my create comment function to render p tags for each comment
+    comments.forEach(comment => {
+        createComments(comment)
+    })
+}
+

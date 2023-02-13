@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import Cards from "../components/Cards"
+import Cards from "../components/OrderCards"
 
 
 function Adminpage() {
